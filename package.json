@@ -1,27 +1,26 @@
 {
-  "name": "ai-website-clone-template",
-  "version": "0.5.1",
+  "name": "meetyourjyotishi",
+  "version": "1.0.0",
   "private": true,
-  "description": "Clone any website into a clean, modern Next.js codebase using AI coding agents",
-  "author": "JCodesMore",
+  "description": "MeetYourJyotishi - Modern Celestial Destiny, Vedic Wisdom, & Tarot Oracle Web Application",
+  "author": "Ashok Sahani",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
+    "url": "https://github.com/AshokSahani7390/MeetYourJyotishi.git"
   },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
-  "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
-  },
+  "homepage": "https://github.com/AshokSahani7390/MeetYourJyotishi",
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
-    "nextjs",
-    "ai",
-    "template",
-    "tailwindcss",
-    "shadcn-ui"
+    "nextjs16",
+    "react19",
+    "tarot",
+    "jyotish",
+    "astrology",
+    "framer-motion",
+    "rive",
+    "3d-cards",
+    "tailwind-v4",
+    "typescript"
   ],
   "engines": {
     "node": ">=24"
@@ -36,8 +35,11 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
+    "@rive-app/react-canvas": "^4.35.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^13.4.4",
+    "lenis": "^1.3.26",
     "lucide-react": "^1.6.0",
     "next": "16.3.5",
     "react": "19.2.4",

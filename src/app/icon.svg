@@ -1,0 +1,42 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4D9" />
+      <stop offset="35%" stop-color="#F5C678" />
+      <stop offset="70%" stop-color="#E29B4A" />
+      <stop offset="100%" stop-color="#AA6D2E" />
+    </linearGradient>
+    <linearGradient id="coreGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#FFE099" />
+      <stop offset="100%" stop-color="#F3A754" />
+    </linearGradient>
+    <radialGradient id="sunburst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE8B3" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#F3A754" stop-opacity="0.6" />
+      <stop offset="80%" stop-color="#AA6D2E" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#140E34" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="24" cy="24" r="23" fill="#0E0C24" />
+  <circle cx="24" cy="24" r="21" stroke="url(#goldSheen)" stroke-width="1.2" stroke-opacity="0.4" />
+  <circle cx="24" cy="24" r="16" stroke="url(#goldSheen)" stroke-width="0.75" stroke-dasharray="1.5 2.5" stroke-opacity="0.7" />
+
+  <!-- 4 Cardinal Spikes -->
+  <polygon points="24,3 27,21 24,24 21,21" fill="url(#goldSheen)" />
+  <polygon points="24,45 27,27 24,24 21,27" fill="url(#goldSheen)" />
+  <polygon points="3,24 21,21 24,24 21,27" fill="url(#goldSheen)" />
+  <polygon points="45,24 27,21 24,24 27,27" fill="url(#goldSheen)" />
+
+  <!-- 4 Diagonal Spikes -->
+  <polygon points="9,9 22,21 24,24 21,22" fill="url(#goldSheen)" opacity="0.9" />
+  <polygon points="39,9 27,22 24,24 26,21" fill="url(#goldSheen)" opacity="0.9" />
+  <polygon points="9,39 21,26 24,24 22,27" fill="url(#goldSheen)" opacity="0.9" />
+  <polygon points="39,39 26,27 24,24 27,26" fill="url(#goldSheen)" opacity="0.9" />
+
+  <!-- Central Star Core -->
+  <circle cx="24" cy="24" r="6" fill="url(#sunburst)" />
+  <polygon points="24,19 28,24 24,29 20,24" fill="url(#coreGlow)" />
+  <circle cx="24" cy="24" r="1.5" fill="#FFFFFF" />
+</svg>

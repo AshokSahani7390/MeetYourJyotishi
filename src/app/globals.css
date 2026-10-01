@@ -8,7 +8,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-header: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, monospace;
+  --font-header: var(--font-ginger), "ginger", "OPTISerlio", Georgia, serif;
+  --font-serlio: var(--font-serlio), "OPTISerlio", Georgia, serif;
+  --font-heading: var(--font-header);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -38,58 +42,48 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-gold: #eeb576;
-  --color-gold-light: #e29e67;
-  --color-gold-dark: #c9944f;
-  --color-deep-purple: #1a1539;
-  --color-mid-purple: #251d57;
-  --color-card-purple-from: #1f1a3b;
-  --color-card-purple-to: #161433;
-  --color-glow-purple: #7f65f2;
+
+  --color-foreground-muted: #8c8b9a;
+  --color-foreground-prominent: #fafafa;
+  --color-btn-secondary-background: #c7965f;
+  --color-btn-primary-foreground: #0d0b21;
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-  --radius-5xl: calc(var(--radius) * 4);
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+
+  --ease-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --duration-emphasized-decelerate: 0.4s;
+  --duration-standard-decelerate: 0.25s;
 }
 
 :root {
-  --background: #1a1539;
-  --foreground: #ffffff;
-  --card: #1f1a3b;
-  --card-foreground: #ffffff;
-  --popover: #1f1a3b;
-  --popover-foreground: #ffffff;
-  --primary: #eeb576;
-  --primary-foreground: #1a1539;
-  --secondary: #251d57;
-  --secondary-foreground: #ffffff;
-  --muted: #251d57;
-  --muted-foreground: #b3b0a9;
-  --accent: #372988;
-  --accent-foreground: #ffffff;
+  --background: lab(7.56% 12.24 -23.30);
+  --foreground: lab(73.55% 0.55 0.20);
+  --card: lab(10% 10 -20);
+  --card-foreground: lab(95% 0 0);
+  --popover: lab(8% 12 -23);
+  --popover-foreground: lab(95% 0 0);
+  --primary: #f3a754;
+  --primary-foreground: #0d0b21;
+  --secondary: lab(15% 10 -18);
+  --secondary-foreground: #fafafa;
+  --muted: lab(15% 5 -10);
+  --muted-foreground: #8c8b9a;
+  --accent: #c7965f;
+  --accent-foreground: #0d0b21;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #7f65f2;
-  --chart-1: #eeb576;
-  --chart-2: #7f65f2;
-  --chart-3: #372988;
-  --chart-4: #251d57;
-  --chart-5: #1a1539;
-  --radius: 0.625rem;
-  --sidebar: #1a1539;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #eeb576;
-  --sidebar-primary-foreground: #1a1539;
-  --sidebar-accent: #251d57;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #7f65f2;
-  --nav-height: 5rem;
+  --border: rgba(247, 195, 103, 0.15);
+  --input: rgba(247, 195, 103, 0.2);
+  --ring: #f3a754;
+  --radius: 1rem;
+  --nav-height: 6.5rem;
 }
 
 @layer base {
@@ -97,43 +91,185 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    background-color: #0e0c24;
+    color: #b8b8b8;
+    font-family: var(--font-sans);
+    overflow-x: clip;
+    max-width: 100vw;
+    position: relative;
   }
   html {
-    @apply font-sans scroll-smooth;
+    background-color: #0e0c24;
+    color-scheme: dark;
+    overflow-x: clip;
+    max-width: 100vw;
   }
 }
 
-/* Tarot site gradient utilities */
-.gradient-gold {
-  background: linear-gradient(to right, #e29e67, #c9944f);
+/* Lenis Smooth Scroll Engine */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
 
-.gradient-card {
-  background: linear-gradient(#1f1a3b, #161433),
-    radial-gradient(62.75% 83.44% at 50% 150%, #ffffff, #6a5db3 50%, #3b3372 100%);
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-.gradient-card-glow {
-  background: radial-gradient(
-    60% 150% at 66% 40%,
-    rgba(127, 101, 242, 1) 0%,
-    rgba(121, 96, 231, 0.92) 15%,
-    rgba(115, 90, 220, 0.83) 30%,
-    rgba(109, 84, 209, 0.73) 45%,
-    rgba(100, 75, 191, 0.58) 60%,
-    rgba(88, 65, 168, 0.38) 75%,
-    rgba(80, 61, 154, 0.19) 90%,
-    rgba(73, 58, 140, 0) 100%
-  );
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Gradient Backgrounds & Cards */
+.gradient-game-card-bg {
+  background: 
+    linear-gradient(rgb(31, 26, 59) 0%, rgb(22, 20, 51) 100%) padding-box,
+    radial-gradient(62.75% 83.44% at 50% 150%, rgb(255, 255, 255) 0%, rgb(106, 93, 179) 50%, rgb(59, 51, 114) 100%) border-box;
+  border: 1px solid transparent;
 }
 
 .gradient-newsletter-bg {
-  background: linear-gradient(135deg, #251d57 0%, #1a1539 50%, #251d57 100%);
-  border-color: transparent;
+  background: 
+    radial-gradient(50% 70% at 50% 0%, rgb(82, 63, 160) 0%, rgb(29, 18, 72) 100%) padding-box,
+    linear-gradient(90deg, rgb(79, 43, 10), rgb(89, 64, 40) 27%, rgb(239, 197, 117) 55%, rgb(140, 103, 67) 86%) border-box;
+  border: 1px solid transparent;
 }
 
 .gradient-footer-bg {
-  background: linear-gradient(180deg, #251d57 0%, #1a1539 100%);
-  border-color: transparent;
+  background: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0)) padding-box,
+    radial-gradient(62.75% 83.44% at 50% 100%, rgb(53, 37, 129) 0%, rgb(53, 41, 100) 100%) padding-box,
+    linear-gradient(90deg, rgb(79, 43, 10), rgb(89, 64, 40) 27%, rgb(239, 197, 117) 55%, rgb(140, 103, 67) 86%) border-box;
+  border-top: 1px solid rgba(239, 197, 117, 0.2);
+}
+
+.section-h1-title {
+  background: linear-gradient(rgba(255, 255, 255, 0.97) -9.37%, rgba(153, 153, 153, 0.92) 113.12%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-header);
+}
+
+.gtext-shim-gradient-4 {
+  background: linear-gradient(45deg, rgba(238, 178, 118, 0.89) 0%, rgb(166, 133, 63) 27%, rgb(239, 197, 117) 55%, rgb(140, 103, 67) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-header);
+}
+
+.btn-plain-cta {
+  background: linear-gradient(90deg, #F3A754 0%, #F5C678 100%);
+  color: rgb(26, 21, 57);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.btn-plain-cta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.perspective-distant {
+  perspective: 1200px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.card-3d-flipper {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.stack-parent {
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.stack-parent > * {
+  grid-area: stack;
+}
+
+/* 7. Custom Neon Celestial Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09071a;
+  border-left: 1px solid rgba(243, 167, 84, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F3A754 0%, #7F65F2 100%);
+  border-radius: 9999px;
+  border: 2px solid #09071a;
+  box-shadow: 0 0 10px rgba(243, 167, 84, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFE099 0%, #9B82FF 100%);
+  box-shadow: 0 0 18px rgba(243, 167, 84, 0.8), 0 0 24px rgba(127, 101, 242, 0.6);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F3A754 #09071a;
+}
+
+/* 9. Shimmer Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(243, 167, 84, 0.16) 50%, rgba(255, 255, 255, 0.04) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* 1. Light Mode Tokens */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #F7F5EF;
+  color: #261D42;
+}
+
+html.light .section-h1-title {
+  background: linear-gradient(180deg, #1C1236 0%, #4D3380 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

@@ -1,0 +1,7 @@
+Contact: mailto:security@meetyourjyotishi.com
+Contact: tel:+1-877-987-7792
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://meetyourjyotishi.com/.well-known/security.txt
+Policy: https://meetyourjyotishi.com/privacy
+Acknowledgments: https://meetyourjyotishi.com/contact

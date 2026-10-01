@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none" width="280" height="60">
+  <defs>
+    <linearGradient id="logoGoldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4D9" />
+      <stop offset="35%" stop-color="#F5C678" />
+      <stop offset="70%" stop-color="#E29B4A" />
+      <stop offset="100%" stop-color="#AA6D2E" />
+    </linearGradient>
+    <linearGradient id="textGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF5DE" />
+      <stop offset="50%" stop-color="#F3A754" />
+      <stop offset="100%" stop-color="#E29B4A" />
+    </linearGradient>
+    <radialGradient id="logoSunburst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFE8B3" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#F3A754" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C7965F" stop-opacity="0" />
+    </radialGradient>
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Celestial Emblem (Center: x=30, y=30) -->
+  <g id="emblem" filter="url(#logoGlow)">
+    <!-- Outer Orbital Ring -->
+    <circle cx="30" cy="30" r="25" stroke="url(#logoGoldSheen)" stroke-width="0.8" stroke-opacity="0.45" stroke-dasharray="2 3" />
+    <!-- Cardinal Points -->
+    <circle cx="30" cy="5" r="1.5" fill="url(#logoGoldSheen)" />
+    <circle cx="30" cy="55" r="1.5" fill="url(#logoGoldSheen)" />
+    <circle cx="5" cy="30" r="1.5" fill="url(#logoGoldSheen)" />
+    <circle cx="55" cy="30" r="1.5" fill="url(#logoGoldSheen)" />
+    <!-- Inner Halo Ring -->
+    <circle cx="30" cy="30" r="21" stroke="url(#logoGoldSheen)" stroke-width="1.2" stroke-opacity="0.85" />
+    <!-- 8-Pointed Star of Destiny (Cardinal) -->
+    <path d="M30 8 L33.5 24.5 L50 30 L33.5 35.5 L30 52 L26.5 35.5 L10 30 L26.5 24.5 Z" fill="url(#logoGoldSheen)" opacity="0.95" />
+    <!-- 8-Pointed Star of Destiny (Diagonal) -->
+    <path d="M30 14 L32.2 26 L44 30 L32.2 34 L30 46 L27.8 34 L16 30 L27.8 26 Z" transform="rotate(45 30 30)" fill="url(#logoGoldSheen)" opacity="0.75" />
+    <!-- Crescent Moon (Chandra) -->
+    <path d="M27.5 17 C35.5 17 41 22.5 41 30.5 C41 38.5 34.5 43 27.5 43 C33.8 41.8 37.2 36.8 37.2 30.5 C37.2 24.2 33.2 18.7 27.5 17 Z" fill="url(#logoGoldSheen)" opacity="0.9" />
+    <!-- Sun Core & Diamond Drishti -->
+    <circle cx="30" cy="30" r="6" fill="url(#logoSunburst)" />
+    <polygon points="30,24 35,30 30,36 25,30" fill="#FFFFFF" opacity="0.95" />
+    <circle cx="30" cy="30" r="1.8" fill="#FFF4D9" />
+  </g>
+
+  <!-- Typography -->
+  <g id="typography">
+    <text x="68" y="34" font-family="'DM Sans', system-ui, sans-serif" font-weight="500" font-size="20" fill="#EFE7D8" letter-spacing="-0.3">MeetYour</text>
+    <text x="162" y="35" font-family="'ginger', 'OPTISerlio', Georgia, serif" font-weight="700" font-size="23" fill="url(#textGoldGrad)" letter-spacing="0.2">Jyotishi</text>
+    <text x="69" y="47" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="7.5" fill="#C7965F" letter-spacing="2.6" text-transform="uppercase">CELESTIAL DESTINY &amp; TAROT</text>
+  </g>
+</svg>

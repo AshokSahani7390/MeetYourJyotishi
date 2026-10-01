@@ -2,48 +2,72 @@
 node_modules/
 .pnp
 .pnp.js
+.yarn/install-state.gz
 
-# Build
+# Next.js Build Output
 .next/
 out/
 build/
 dist/
 
-# Environment
+# Environment Variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+*.env
+*.env.*
 
-# Debug
+# Logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# IDE
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# IDE & Editor Settings
 .idea/
 .vscode/
-*.swp
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 *.swo
+*.swp
+*.sublime-project
+*.sublime-workspace
 
-# OS
+# Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# TypeScript
+# TypeScript & Cache
 *.tsbuildinfo
-next-env.d.ts
+.eslintcache
+.turbo/
 
-# Vercel
+# Vercel Deployment Metadata
 .vercel
 
-# Local settings (not project config)
-.claude/settings.local.json
-
-# User-specific skills (not part of the template)
-.claude/skills/customize/
-.claude/skills/release/
-
-# Local temp files
+# Local Temp & Scratch Files
 temp/
+tmp/
+*.tmp
+*.bak
+*.local
+.claude/settings.local.json
